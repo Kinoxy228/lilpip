@@ -1,5 +1,6 @@
 install:
 	uv sync
+	uv pip install -e .
 
 VD-games:
 	uv run VD-games
@@ -10,7 +11,5 @@ build:
 package-install:
 	uv tool install dist/*.whl
 
-publish-local: build package-install
-
 clean:
-	rm -rf dist build *.egg-info
+	rm -rf dist build *.egg-info .venv
